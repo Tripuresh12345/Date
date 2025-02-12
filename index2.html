@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Series</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
         body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -17,15 +17,11 @@
             flex-direction: column;
         }
         .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: transparent;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto auto;
             gap: 20px;
+            width: 80%;
             max-width: 1200px;
             height: auto;
         }
@@ -41,8 +37,7 @@
             height: 100%;
             max-width: 600px;
             max-height: 400px;
-            border: 5px solid #ff69b4;
-            border-radius: 10px;
+            border: 2px solid #000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .link-container {
@@ -56,11 +51,12 @@
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
         .romantic-text {
             font-family: 'Dancing Script', cursive;
             font-size: 2em;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: fadeIn 2s ease-in-out;
         }
         .question-container {
@@ -83,7 +79,7 @@
             background-color: #ff69b4;
             color: #fff;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease;
         }
         .options button:hover {
@@ -93,29 +89,20 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        .valentine-text {
-            font-size: 3em;
-            font-weight: bold;
-            color: #ff69b4;
-            text-align: center;
-            margin: 20px 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
+    </style>
+    <style>
+        .video-container {
+            gap: 20px;
         }
-        #background-video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
+        video {
+            border: 5px solid #ff69b4;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-                function redirectToNextPage() {
+        <div class="video-container">
             <video controls>
                 <source src="Annuvid1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -123,20 +110,20 @@
         </div>
     
         <div>
-            <div class="romantic-text valentine-text">Happy Valentine's Dayyy</div>
+            <div class="romantic-text" style="font-size: 3em; font-weight: bold; color: #ff69b4; text-align: center; margin: 20px 0; width: 100%; display: flex; justify-content: center;">Happy Valentine's Dayyy</div>
             <script>
                 function redirectToIndex3() {
                     window.location.href = 'index3.html';
                 }
             </script>
             <div class="question-container">
-                <div class="question romantic-text" style="color: #ffffff;">Will you be my Valentine?</div>
+                <div class="question romantic-text" style="color: #fff;">Will you be my Valentine?</div>
                 <div class="options">
-                    <button onclick="displayThanksMessage()">Yes</button>
-                    <button onclick="displayGif()">No</button>
+                    <button onclick="showThanksMessage()">Yes</button>
+                    <button onclick="showGif()">No</button>
                 </div>
                 <script>
-                    function displayGif() {
+                    function showGif() {
                         const gifContainer = document.createElement('div');
                         gifContainer.style.position = 'fixed';
                         gifContainer.style.top = '50%';
@@ -169,7 +156,7 @@
                 </script>
                 <div id="thanks-message" class="romantic-text" style="display: none; margin-top: 20px;"></div>
                 <script>
-                    function displayThanksMessage() {
+                    function showThanksMessage() {
                         const message = document.getElementById('thanks-message');
                         message.innerHTML = 'Thanks For Everything 😊💟.';
                         message.style.display = 'block';
@@ -178,7 +165,7 @@
                 </script>
             </div>
             <div class="question-container">
-                <div class="question romantic-text">Ready for Online date?</div>
+                <div class="question romantic-text" style="color: #fff;">Ready for Online date?</div>
                 <div class="options">
                     <button onclick="redirectToIndex3()">Yes</button>
                     <button>No</button>
@@ -187,19 +174,19 @@
         </div>
     </div>
     
-    <video autoplay muted loop id="background-video">
-        <source src="totoro-on-top-of-a-tree.1920x1080.mp4" type="video/mp4">
-<video muted loop id="background-video">
-    <source src="totoro-on-top-of-a-tree.1920x1080.mp4" type="video/mp4">
-    });
-</script>
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-        }
-    </style>
 </body>
 </html>
+<video autoplay muted loop id="background-video">
+    <source src="totoro-on-top-of-a-tree.1920x1080.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<style>
+    #background-video {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+</style>
