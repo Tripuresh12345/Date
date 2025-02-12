@@ -89,6 +89,29 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto auto;
+                width: 100%;
+            }
+            .romantic-text {
+                font-size: 1.5em;
+                text-align: center;
+                margin: 10px 0;
+            }
+            .question-container {
+                width: 100%;
+                padding: 0 10px;
+            }
+            .options {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .options button {
+                width: 100%;
+            }
+        }
     </style>
     <style>
         .video-container {
@@ -157,8 +180,9 @@
                 <div id="thanks-message" class="romantic-text" style="display: none; margin-top: 20px;"></div>
                 <script>
                     function showThanksMessage() {
-                         const message = document.getElementById('thanks-message');
-                        message.innerHTML = 'Thanks For Everything 😊💟.'
+                        const message = document.getElementById('thanks-message');
+                        message.innerHTML = 'Thanks For Everything 😊💟.';
+                        message.style.color = '#fff';
                         message.style.display = 'block';
                         message.style.animation = 'fadeIn 2s ease-in-out';
                     }
